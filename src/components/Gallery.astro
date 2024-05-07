@@ -1,0 +1,47 @@
+---
+const { ruta } = Astro.props;
+const data = ruta;
+---
+
+<section class="flex flex-wrap gap-4 w-9/12">
+  {
+    data.map((picture) => (
+      <div class="contentPicture grow overflow-hidden h-[200px]">
+        <picture>
+          <source srcset="" />
+          <source srcset="" />
+          <img
+            class="h-[200px] w-full block object-cover "
+            srcset={picture.image}
+            alt=""
+          />
+        </picture>
+        <div class="description h-[200px] bg-gradient-to-b from-transparent to-zinc-900 flex flex-row items-end p-3">
+          <p class="text-xl text-zinc-200	">
+            {picture.description}
+            <br />
+            <span>
+              <a class="cursor-pointer	">Ver cuadro...</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</section>
+<style>
+  .contentPicture:hover .description {
+    transform: translateY(-100%);
+  }
+  .contentPicture:hover img {
+    animation: Scalar 50s linear forwards;
+  }
+  @keyframes Scalar {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(2);
+    }
+  }
+</style>

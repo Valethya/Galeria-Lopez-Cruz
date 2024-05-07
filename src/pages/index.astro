@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/layout.astro";
+---
+
+<Layout title="hola!">
+  <main class="w-full">
+    <section id="Home" class="h-svh relative flex flex-col justify-between">
+      <div class="h-1/4 bg-[#FAFCF8] z-10"></div>
+      <div class="image w-full absolute bg-cover bg-center h-dvh"></div>
+      <h1
+        class="text-4xl w-full text-center sm:text-5xl xs: p-5 bg-[#FAFCF8] opacity-65"
+      >
+        Galeria Lopez Cruz
+      </h1>
+      <div class="h-1/4 bg-[#FAFCF8] z-10"></div>
+    </section>
+  </main>
+</Layout>
+<style>
+  .image {
+    background-image: url("assets/images/fullHd.jpg");
+  }
+  body {
+  }
+</style>
